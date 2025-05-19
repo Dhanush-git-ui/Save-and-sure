@@ -1,0 +1,50 @@
+---
+const partners = [
+  { 
+    name: "Siemens", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg" 
+  },
+  { 
+    name: "Schneider Electric", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/8/84/Schneider_Electric.svg" 
+  },
+  { 
+    name: "ABB", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/00/ABB_logo.svg" 
+  },
+  { 
+    name: "Allen-Bradley", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/1/14/Allen-Bradley.svg" 
+  },
+  { 
+    name: "Mettler Toledo", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Mettler-Toledo_Logo.svg" 
+  }
+];
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="inline-block py-1 px-3 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-4">Technology Partners</span>
+      <h2 class="text-3xl font-heading font-bold text-secondary-900 mb-4">Our Global Partners</h2>
+      <p class="max-w-2xl mx-auto text-secondary-600">
+        We collaborate with leading global technology companies to ensure best-in-class solutions for our clients.
+      </p>
+    </div>
+    
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
+      {partners.map(partner => (
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300">
+          <img 
+            src={partner.logo} 
+            alt={partner.name} 
+            class="h-12 md:h-16" 
+            loading="lazy"
+            style="max-width: 200px; width: auto;"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

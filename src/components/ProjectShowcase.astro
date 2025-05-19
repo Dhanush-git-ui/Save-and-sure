@@ -1,0 +1,83 @@
+---
+const projects = [
+  {
+    title: "Cement Plant Automation",
+    location: "Maharashtra",
+    image: "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    description: "Upgraded electrical control system with new PLC-based MCC panels and automated conveyor controls, resulting in 30% higher production uptime.",
+    results: ["30% higher production uptime", "Real-time monitoring", "Improved safety"]
+  },
+  {
+    title: "Pharma Packaging Line",
+    location: "Hyderabad",
+    image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    description: "Integrated conveyor and weighing system for a pharmaceutical manufacturer, synchronizing assembly machines with an automated batch-weighing station.",
+    results: ["25% reduced material waste", "Decreased manual labor", "Enhanced quality control"]
+  },
+  {
+    title: "Metro Rail Equipment Manufacturing",
+    location: "Chennai",
+    image: "https://images.pexels.com/photos/3866816/pexels-photo-3866816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    description: "Designed and implemented power distribution panels and SCADA controls for a metro rail component plant with smart automation and predictive maintenance alerts.",
+    results: ["20% reduced downtime", "Improved equipment availability", "Comprehensive monitoring"]
+  }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block py-1 px-3 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-4">Case Studies</span>
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary-900 mb-4">Our Successful Projects</h2>
+      <p class="max-w-2xl mx-auto text-secondary-600">
+        Explore how our solutions have transformed operations and driven measurable results across different industries.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {projects.map(project => (
+        <div class="bg-white rounded-lg shadow-custom overflow-hidden border border-secondary-100 hover:shadow-lg transition-shadow duration-300">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-4 right-4 bg-primary-600 text-white text-xs font-medium px-2 py-1 rounded-md">
+              {project.location}
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <h3 class="text-xl font-heading font-semibold text-secondary-900 mb-3">{project.title}</h3>
+            <p class="text-secondary-600 mb-4">{project.description}</p>
+            
+            <h4 class="text-sm font-medium text-secondary-900 mb-2">Key Results:</h4>
+            <ul class="space-y-1">
+              {project.results.map(result => (
+                <li class="flex items-center text-secondary-700">
+                  <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  {result}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+      <a 
+        href="/projects" 
+        class="inline-flex items-center py-3 px-6 bg-primary-600 hover:bg-primary-700 text-white rounded-md transition-colors duration-300 font-medium"
+      >
+        View All Projects
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

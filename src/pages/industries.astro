@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const industries = [
+  {
+    name: "Manufacturing",
+    description: "Custom control panels and PLC systems for factories and assembly lines in automotive, food processing, and consumer goods.",
+    solutions: [
+      "Assembly line automation",
+      "Quality control systems",
+      "Production monitoring",
+      "Process optimization",
+      "Equipment integration"
+    ],
+    benefits: [
+      "Increased productivity",
+      "Improved quality control",
+      "Reduced operational costs",
+      "Enhanced safety"
+    ]
+  },
+  {
+    name: "Pharmaceutical",
+    description: "Automation equipment ensuring repeatability and compliance for mixing, coating, and filling processes under GMP standards.",
+    solutions: [
+      "Clean room automation",
+      "Batch process control",
+      "Environmental monitoring",
+      "Compliance reporting",
+      "Material tracking"
+    ],
+    benefits: [
+      "GMP compliance",
+      "Process consistency",
+      "Quality assurance",
+      "Detailed documentation"
+    ]
+  },
+  {
+    name: "Power & Energy",
+    description: "Power distribution and control systems for plants and utilities, maintaining uninterrupted electricity generation and distribution.",
+    solutions: [
+      "Power distribution panels",
+      "Generator controls",
+      "Grid monitoring",
+      "Load management",
+      "Safety systems"
+    ],
+    benefits: [
+      "Reliable power supply",
+      "Efficient distribution",
+      "Reduced downtime",
+      "Better grid stability"
+    ]
+  },
+  {
+    name: "Steel & Cement",
+    description: "Control solutions that optimize large-scale operations in heavy industries like steel mills and cement plants.",
+    solutions: [
+      "Furnace controls",
+      "Material handling",
+      "Production monitoring",
+      "Quality testing",
+      "Safety systems"
+    ],
+    benefits: [
+      "Improved throughput",
+      "Energy efficiency",
+      "Quality consistency",
+      "Enhanced safety"
+    ]
+  },
+  {
+    name: "Water Treatment",
+    description: "Control panels for water treatment facilities to manage pumps, valves, and treatment processes for regulatory compliance.",
+    solutions: [
+      "Process automation",
+      "Chemical dosing",
+      "Quality monitoring",
+      "Remote operation",
+      "Compliance reporting"
+    ],
+    benefits: [
+      "Water quality control",
+      "Regulatory compliance",
+      "Efficient treatment",
+      "Cost reduction"
+    ]
+  },
+  {
+    name: "Bulk Material Handling",
+    description: "Controllers that automate movement, storage, and processing of bulk goods in mining, ports, and warehousing.",
+    solutions: [
+      "Conveyor systems",
+      "Weighing solutions",
+      "Storage management",
+      "Loading automation",
+      "Inventory tracking"
+    ],
+    benefits: [
+      "Efficient logistics",
+      "Accurate tracking",
+      "Reduced labor costs",
+      "Improved safety"
+    ]
+  }
+];
+---
+
+<Layout title="Industries" description="Discover how our automation solutions serve various industrial sectors across India.">
+  <div>
+    <PageHeader
+      title="Industries We Serve"
+      description="Tailored automation solutions for diverse industrial sectors."
+    />
+
+    <!-- Industries Grid -->
+    <div class="py-16">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {industries.map(industry => (
+            <div class="bg-white rounded-lg shadow-md overflow-hidden service-card">
+              <div class="aspect-video">
+                <img
+                  src={`/images/industries/${industry.name.toLowerCase().replace(/[&\s]+/g, '-')}.jpg`}
+                  alt={industry.name}
+                  class="w-full h-full object-cover"
+                  onerror="this.src='/images/industries/manufacturing.jpg'"
+                />
+              </div>
+
+              <div class="p-6">
+                <h2 class="text-2xl font-heading font-semibold text-secondary-900 mb-4">{industry.name}</h2>
+                <p class="text-secondary-600 mb-6">{industry.description}</p>
+
+                <div class="space-y-6">
+                  <div>
+                    <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-3">Our Solutions</h3>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {industry.solutions.map(solution => (
+                        <li class="flex items-center text-secondary-600">
+                          <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
+                          {solution}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-3">Key Benefits</h3>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {industry.benefits.map(benefit => (
+                        <li class="flex items-center text-secondary-600">
+                          <span class="w-2 h-2 bg-accent-500 rounded-full mr-3"></span>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

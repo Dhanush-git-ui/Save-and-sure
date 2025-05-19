@@ -1,0 +1,22 @@
+{
+  "name": "safe-and-sure-projects",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@alpinejs/persist": "^3.13.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "alpinejs": "^3.13.0",
+    "astro": "^5.2.5",
+    "gsap": "^3.13.0",
+    "swiper": "^10.2.0",
+    "tailwindcss": "^3.3.3",
+    "three": "^0.176.0"
+  }
+}

@@ -1,0 +1,105 @@
+---
+const industries = [
+  {
+    name: "Manufacturing",
+    icon: "factory",
+    description: "Custom control panels and PLC systems for factories and assembly lines in automotive, food processing, and consumer goods.",
+    image: "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg"
+  },
+  {
+    name: "Pharmaceutical",
+    icon: "medicine",
+    description: "Automation equipment ensuring repeatability and compliance for mixing, coating, and filling processes under GMP standards.",
+    image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg"
+  },
+  {
+    name: "Power & Energy",
+    icon: "energy",
+    description: "Power distribution and control systems for plants and utilities, maintaining uninterrupted electricity generation and distribution.",
+    image: "/images/industries/power-&-energy.jpg"
+  },
+  {
+    name: "Steel & Cement",
+    icon: "industry",
+    description: "Control solutions that optimize large-scale operations in heavy industries like steel mills and cement plants.",
+    image: "/images/industries/steel-&-cement.jpg"
+  },
+  {
+    name: "Water Treatment",
+    icon: "water",
+    description: "Control panels for water treatment facilities to manage pumps, valves, and treatment processes for regulatory compliance.",
+    image: "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg"
+  },
+  {
+    name: "Bulk Material Handling",
+    icon: "conveyor",
+    description: "Controllers that automate movement, storage, and processing of bulk goods in mining, ports, and warehousing.",
+    image: "https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg"
+  }
+];
+
+const getIcon = (icon) => {
+  switch(icon) {
+    case "factory":
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>`;
+    case "medicine":
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>`;
+    case "energy":
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>`;
+    case "industry":
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>`;
+    case "water":
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>`;
+    case "conveyor":
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>`;
+    default:
+      return '';
+  }
+};
+---
+
+<section class="bg-primary-50 py-20">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block py-1 px-3 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-4">Our Reach</span>
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary-900 mb-4">Industries We Serve</h2>
+      <p class="max-w-2xl mx-auto text-secondary-600">
+        We deliver automation expertise across a broad range of sectors throughout India, customizing solutions for each industry's unique requirements.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {industries.map((industry, index) => (
+        <div class="bg-white rounded-lg shadow-custom hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+          <div class="relative h-48">
+            <img
+              src={industry.image}
+              alt={industry.name}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-6">
+            <div class="w-16 h-16 mb-4 text-primary-600">
+              <Fragment set:html={getIcon(industry.icon)} />
+            </div>
+            <h3 class="text-xl font-heading font-semibold text-secondary-900 mb-3">{industry.name}</h3>
+            <p class="text-secondary-600">{industry.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

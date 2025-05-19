@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const teamMembers = [
+  {
+    name: "Sri Vidya Maddipudi",
+    role: "Co-Founder & Director",
+    description: "An electrical engineering graduate with extensive experience in automation system design. She spearheads our technical vision and quality assurance, ensuring every solution meets our high standards."
+  },
+  {
+    name: "Srihari Prasad Maddipudi",
+    role: "Co-Founder & Director",
+    description: "With a strong background in project and operations management, he oversees day-to-day operations and customer partnerships. His leadership ensures projects are delivered efficiently and client needs are prioritized."
+  }
+];
+---
+
+<Layout title="About Us" description="Learn about Safe and Sure Projects - our mission, vision, and commitment to excellence in industrial automation.">
+  <div>
+    <!-- Hero Section with Background for Navbar Visibility -->
+    <div class="relative bg-primary-800 pt-24">
+      <!-- 3D Particle Animation for Header -->
+      <div id="header-animation" class="absolute inset-0 z-0 pointer-events-none"></div>
+
+      <!-- Page Header -->
+      <div class="bg-primary-800 text-white py-16 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 header-title">About Us</h1>
+            <p class="text-primary-100 text-lg header-description">
+              Building the future of industrial automation with innovation and excellence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission & Vision -->
+    <div class="py-16 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-2xl font-heading font-semibold text-secondary-900 mb-6">Our Mission</h2>
+            <p class="text-secondary-600">
+              At Safe and Sure Projects, we believe in strong, long-term partnerships built on trust and mutual success. Our mission is to deliver exceptional automation and electrical engineering solutions that exceed customer expectations.
+            </p>
+          </div>
+
+          <div class="text-center mb-12">
+            <h2 class="text-2xl font-heading font-semibold text-secondary-900 mb-6">Our Vision</h2>
+            <p class="text-secondary-600">
+              We were founded with a vision to revolutionize industrial automation, and we continually invest in R&D to stay ahead of industry trends. Quality and safety are our top priorities – we implement strict quality controls at every stage and design with robust safety features to protect personnel and equipment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leadership Team -->
+    <div class="py-16 bg-primary-50">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl font-heading font-semibold text-secondary-900 mb-4">Our Leadership</h2>
+          <p class="text-secondary-600 max-w-2xl mx-auto">
+            Meet the visionaries leading Safe and Sure Projects towards excellence in industrial automation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {teamMembers.map(member => (
+            <div class="bg-white p-6 rounded-lg shadow-md service-card">
+              <h3 class="text-xl font-heading font-semibold text-secondary-900 mb-2">{member.name}</h3>
+              <p class="text-primary-600 font-medium mb-4">{member.role}</p>
+              <p class="text-secondary-600">{member.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Approach -->
+    <div class="py-16 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-2xl font-heading font-semibold text-secondary-900 mb-8 text-center">Our Approach</h2>
+
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-xl font-heading font-semibold text-secondary-900 mb-4">Quality First</h3>
+              <p class="text-secondary-600">
+                We maintain the highest standards in every project, from component selection to final implementation. Our quality control processes ensure reliable, long-lasting solutions.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-heading font-semibold text-secondary-900 mb-4">Innovation Driven</h3>
+              <p class="text-secondary-600">
+                By staying at the forefront of automation technology, we help our clients achieve greater efficiency and competitive advantage. We continuously explore new technologies and methodologies.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-heading font-semibold text-secondary-900 mb-4">Customer Focused</h3>
+              <p class="text-secondary-600">
+                Understanding and meeting our clients' needs is central to our approach. We work closely with each customer to deliver solutions that address their specific challenges and objectives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Team -->
+    <div class="py-16 bg-primary-50">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl font-heading font-semibold text-secondary-900 mb-8">Our Team</h2>
+          <p class="text-secondary-600 mb-12">
+            Our strength lies in our people. Each department brings specialized expertise to deliver reliable solutions and responsive service to our clients.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-3">Engineering Team</h3>
+              <p class="text-secondary-600">
+                Skilled electrical and controls engineers design and test each system for optimal performance.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-3">Manufacturing Team</h3>
+              <p class="text-secondary-600">
+                Technicians and fabricators build high-quality control panels and modules according to strict standards.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-3">Sales & Support</h3>
+              <p class="text-secondary-600">
+                A dedicated front-line team consults with clients, understands requirements, and ensures seamless communication.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-3">Development & Service</h3>
+              <p class="text-secondary-600">
+                After-sales engineers handle project commissioning, maintenance, and continuous improvements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

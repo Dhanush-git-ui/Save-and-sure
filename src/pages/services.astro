@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: "electrical-panels",
+    title: "Electrical & Control Panels",
+    description: "Custom-designed panels (MCC, VFD, BMS, PCC, etc.) that ensure safe, efficient power distribution for industrial operations.",
+    features: [
+      "Custom panel design and fabrication",
+      "Power distribution panels",
+      "Motor control centers (MCC)",
+      "Variable frequency drives (VFD)",
+      "Building management systems (BMS)",
+      "Power control centers (PCC)"
+    ],
+    benefits: [
+      "Enhanced operational reliability",
+      "Improved power efficiency",
+      "Reduced maintenance costs",
+      "Better safety compliance",
+      "Extended equipment life"
+    ]
+  },
+  {
+    id: "automation",
+    title: "Automation Solutions",
+    description: "Advanced PLC and SCADA systems from Siemens, ABB, Schneider, and Allen-Bradley to automate plant operations for maximum efficiency.",
+    features: [
+      "PLC programming and integration",
+      "SCADA system implementation",
+      "HMI design and development",
+      "Industrial network setup",
+      "Process automation",
+      "Data acquisition systems"
+    ],
+    benefits: [
+      "Increased productivity",
+      "Real-time monitoring",
+      "Reduced human error",
+      "Better process control",
+      "Enhanced data analytics"
+    ]
+  },
+  {
+    id: "engineering",
+    title: "Engineering Services",
+    description: "End-to-end electrical engineering from schematics and control logic to commissioning and maintenance for complex industrial projects.",
+    features: [
+      "System design and planning",
+      "Electrical schematics",
+      "Control logic development",
+      "Project commissioning",
+      "Preventive maintenance",
+      "Technical documentation"
+    ],
+    benefits: [
+      "Expert technical guidance",
+      "Optimized system performance",
+      "Reduced downtime",
+      "Comprehensive documentation",
+      "Long-term reliability"
+    ]
+  },
+  {
+    id: "material-handling",
+    title: "Material Handling Systems",
+    description: "Bespoke automation for bulk material flow, including conveyor controls, load feeders, and system integration to optimize material movement.",
+    features: [
+      "Conveyor system automation",
+      "Load feeder controls",
+      "Bulk material handling",
+      "Warehouse automation",
+      "Packaging line control",
+      "Inventory management systems"
+    ],
+    benefits: [
+      "Streamlined logistics",
+      "Improved throughput",
+      "Reduced manual handling",
+      "Better inventory control",
+      "Enhanced safety"
+    ]
+  },
+  {
+    id: "weighing",
+    title: "High-Precision Weighing",
+    description: "Using Mettler-Toledo technology, we provide accurate dosing and batching systems to minimize material variance.",
+    features: [
+      "Precision weighing systems",
+      "Automated batching",
+      "Recipe management",
+      "Quality control integration",
+      "Calibration services",
+      "Compliance reporting"
+    ],
+    benefits: [
+      "Accurate material dosing",
+      "Consistent product quality",
+      "Reduced material waste",
+      "Regulatory compliance",
+      "Process optimization"
+    ]
+  }
+];
+---
+
+<Layout title="Services" description="Explore our comprehensive range of industrial automation and material handling solutions.">
+  <div>
+    <!-- Hero Section with Background for Navbar Visibility -->
+    <div class="relative bg-primary-800 pt-24">
+      <!-- 3D Particle Animation for Header -->
+      <div id="header-animation" class="absolute inset-0 z-0 pointer-events-none"></div>
+
+      <!-- Page Header -->
+      <div class="bg-primary-800 text-white py-16 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 header-title">Our Services</h1>
+            <p class="text-primary-100 text-lg header-description">
+              Comprehensive automation solutions tailored to your industrial needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services List -->
+    <div class="py-16">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="space-y-16">
+          {services.map((service, index) => (
+            <div id={service.id} class="scroll-mt-24">
+              <div class={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-start ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
+                <div class="bg-white p-8 rounded-lg shadow-md service-card">
+                  <h2 class="text-2xl font-heading font-semibold text-secondary-900 mb-4">{service.title}</h2>
+                  <p class="text-secondary-600 mb-6">{service.description}</p>
+
+                  <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-3">Key Features</h3>
+                  <ul class="list-none space-y-2 mb-6">
+                    {service.features.map(feature => (
+                      <li class="flex items-center text-secondary-600">
+                        <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-3">Benefits</h3>
+                  <ul class="list-none space-y-2">
+                    {service.benefits.map(benefit => (
+                      <li class="flex items-center text-secondary-600">
+                        <span class="w-2 h-2 bg-accent-500 rounded-full mr-3"></span>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="bg-primary-50 p-8 rounded-lg relative">
+                  <div class="aspect-video bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <!-- 3D Animation Container for Service Image -->
+                    <div id={`service-animation-${service.id}`} class="absolute inset-0 z-10 pointer-events-none opacity-70"></div>
+                    <img
+                      src={`/images/services/${service.id}.jpg`}
+                      alt={service.title}
+                      class="w-full h-full object-cover relative z-0"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="relative bg-primary-800 pt-24">
+  <!-- 3D Particle Animation for Header -->
+  <div id="header-animation" class="absolute inset-0 z-0 pointer-events-none"></div>
+  
+  <!-- Page Header -->
+  <div class="bg-primary-800 text-white py-16 relative z-10">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 header-title">{title}</h1>
+        <p class="text-primary-100 text-lg header-description">
+          {description}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
