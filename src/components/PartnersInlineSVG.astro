@@ -1,11 +1,44 @@
 ---
-// No imports needed, we'll use inline SVG
+// Partners with custom icons for each company
+const partners = [
+  {
+    name: "ABB",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#FF000D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+          </svg>`
+  },
+  {
+    name: "Siemens",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#009999]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>`
+  },
+  {
+    name: "Schneider Electric",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#3DCD58]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>`
+  },
+  {
+    name: "Allen-Bradley",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#C8102E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>`
+  },
+  {
+    name: "Mettler Toledo",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#005DAA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+          </svg>`
+  }
+];
 ---
 
 <section class="py-16 bg-white relative">
   <!-- 3D Animation Background -->
   <div id="partners-animation" class="absolute inset-0 z-0 pointer-events-none opacity-30"></div>
-  
+
   <div class="container mx-auto px-4 lg:px-8 relative z-10">
     <div class="text-center mb-12">
       <span class="inline-block py-1 px-3 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-4">Technology Partners</span>
@@ -14,58 +47,14 @@
         We collaborate with leading global technology companies to ensure best-in-class solutions for our clients.
       </p>
     </div>
-    
-    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
-      <!-- Siemens Logo -->
-      <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110">
-        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewBox="0 0 300 60" class="h-auto max-h-16">
-          <g fill="#717171">
-            <path d="M30.87,12.32 C30.87,12.32 30.87,47.68 30.87,47.68 C30.87,47.68 0,47.68 0,47.68 C0,47.68 0,12.32 0,12.32 C0,12.32 30.87,12.32 30.87,12.32 z M27.43,15.76 C27.43,15.76 3.44,15.76 3.44,15.76 C3.44,15.76 3.44,44.24 3.44,44.24 C3.44,44.24 27.43,44.24 27.43,44.24 C27.43,44.24 27.43,15.76 27.43,15.76 z"/>
-            <path d="M45.64,12.32 C45.64,12.32 45.64,47.68 45.64,47.68 C45.64,47.68 34.31,47.68 34.31,47.68 C34.31,47.68 34.31,12.32 34.31,12.32 C34.31,12.32 45.64,12.32 45.64,12.32 z M42.2,15.76 C42.2,15.76 37.75,15.76 37.75,15.76 C37.75,15.76 37.75,44.24 37.75,44.24 C37.75,44.24 42.2,44.24 42.2,44.24 C42.2,44.24 42.2,15.76 42.2,15.76 z"/>
-            <path d="M64.85,12.32 C64.85,12.32 64.85,47.68 64.85,47.68 C64.85,47.68 49.08,47.68 49.08,47.68 C49.08,47.68 49.08,12.32 49.08,12.32 C49.08,12.32 64.85,12.32 64.85,12.32 z M61.41,15.76 C61.41,15.76 52.52,15.76 52.52,15.76 C52.52,15.76 52.52,44.24 52.52,44.24 C52.52,44.24 61.41,44.24 61.41,44.24 C61.41,44.24 61.41,15.76 61.41,15.76 z"/>
-          </g>
-        </svg>
-      </div>
-      
-      <!-- Schneider Electric Logo -->
-      <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110">
-        <svg xmlns="http://www.w3.org/2000/svg" width="180" height="40" viewBox="0 0 300 60" class="h-auto max-h-16">
-          <g fill="#717171">
-            <path d="M30,15 L30,45 L15,45 L15,15 L30,15 Z M60,15 L60,45 L45,45 L45,15 L60,15 Z M90,15 L90,45 L75,45 L75,15 L90,15 Z M120,15 L120,45 L105,45 L105,15 L120,15 Z M150,15 L150,45 L135,45 L135,15 L150,15 Z M180,15 L180,45 L165,45 L165,15 L180,15 Z M210,15 L210,45 L195,45 L195,15 L210,15 Z M240,15 L240,45 L225,45 L225,15 L240,15 Z M270,15 L270,45 L255,45 L255,15 L270,15 Z"/>
-            <path d="M25,20 L20,20 L20,40 L25,40 L25,20 Z M55,20 L50,20 L50,40 L55,40 L55,20 Z M85,20 L80,20 L80,40 L85,40 L85,20 Z M115,20 L110,20 L110,40 L115,40 L115,20 Z M145,20 L140,20 L140,40 L145,40 L145,20 Z M175,20 L170,20 L170,40 L175,40 L175,20 Z M205,20 L200,20 L200,40 L205,40 L205,20 Z M235,20 L230,20 L230,40 L235,40 L235,20 Z M265,20 L260,20 L260,40 L265,40 L265,20 Z"/>
-          </g>
-        </svg>
-      </div>
-      
-      <!-- ABB Logo -->
-      <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="40" viewBox="0 0 300 60" class="h-auto max-h-16">
-          <g fill="#717171">
-            <path d="M50,10 L50,30 L30,30 L30,10 L50,10 Z M50,35 L50,55 L30,55 L30,35 L50,35 Z M90,10 L90,30 L70,30 L70,10 L90,10 Z M90,35 L90,55 L70,55 L70,35 L90,35 Z M130,10 L130,30 L110,30 L110,10 L130,10 Z M130,35 L130,55 L110,55 L110,35 L130,35 Z"/>
-            <path d="M45,15 L35,15 L35,25 L45,25 L45,15 Z M45,40 L35,40 L35,50 L45,50 L45,40 Z M85,15 L75,15 L75,25 L85,25 L85,15 Z M85,40 L75,40 L75,50 L85,50 L85,40 Z M125,15 L115,15 L115,25 L125,25 L125,15 Z M125,40 L115,40 L115,50 L125,50 L125,40 Z"/>
-          </g>
-        </svg>
-      </div>
-      
-      <!-- Allen-Bradley Logo -->
-      <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110">
-        <svg xmlns="http://www.w3.org/2000/svg" width="140" height="40" viewBox="0 0 300 60" class="h-auto max-h-16">
-          <g fill="#717171">
-            <path d="M30,10 L30,50 L10,50 L10,10 L30,10 Z M50,10 L50,50 L35,50 L35,10 L50,10 Z M90,10 L90,50 L55,50 L55,10 L90,10 Z M130,10 L130,50 L95,50 L95,10 L130,10 Z M170,10 L170,50 L135,50 L135,10 L170,10 Z M210,10 L210,50 L175,50 L175,10 L210,10 Z M250,10 L250,50 L215,50 L215,10 L250,10 Z M290,10 L290,50 L255,50 L255,10 L290,10 Z"/>
-            <path d="M25,15 L15,15 L15,45 L25,45 L25,15 Z M45,15 L40,15 L40,45 L45,45 L45,15 Z M85,15 L60,15 L60,45 L85,45 L85,15 Z M125,15 L100,15 L100,45 L125,45 L125,15 Z M165,15 L140,15 L140,45 L165,45 L165,15 Z M205,15 L180,15 L180,45 L205,45 L205,15 Z M245,15 L220,15 L220,45 L245,45 L245,15 Z M285,15 L260,15 L260,45 L285,45 L285,15 Z"/>
-          </g>
-        </svg>
-      </div>
-      
-      <!-- Mettler Toledo Logo -->
-      <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110">
-        <svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 300 60" class="h-auto max-h-16">
-          <g fill="#717171">
-            <path d="M20,10 L20,50 L10,50 L10,10 L20,10 Z M40,10 L40,50 L25,50 L25,10 L40,10 Z M60,10 L60,50 L45,50 L45,10 L60,10 Z M80,10 L80,50 L65,50 L65,10 L80,10 Z M100,10 L100,50 L85,50 L85,10 L100,10 Z M120,10 L120,50 L105,50 L105,10 L120,10 Z M140,10 L140,50 L125,50 L125,10 L140,10 Z M160,10 L160,50 L145,50 L145,10 L160,10 Z M180,10 L180,50 L165,50 L165,10 L180,10 Z M200,10 L200,50 L185,50 L185,10 L200,10 Z M220,10 L220,50 L205,50 L205,10 L220,10 Z M240,10 L240,50 L225,50 L225,10 L240,10 Z M260,10 L260,50 L245,50 L245,10 L260,10 Z M280,10 L280,50 L265,50 L265,10 L280,10 Z"/>
-            <path d="M15,15 L15,45 L15,45 L15,15 Z M35,15 L30,15 L30,45 L35,45 L35,15 Z M55,15 L50,15 L50,45 L55,45 L55,15 Z M75,15 L70,15 L70,45 L75,45 L75,15 Z M95,15 L90,15 L90,45 L95,45 L95,15 Z M115,15 L110,15 L110,45 L115,45 L115,15 Z M135,15 L130,15 L130,45 L135,45 L135,15 Z M155,15 L150,15 L150,45 L155,45 L155,15 Z M175,15 L170,15 L170,45 L175,45 L175,15 Z M195,15 L190,15 L190,45 L195,45 L195,15 Z M215,15 L210,15 L210,45 L215,45 L215,15 Z M235,15 L230,15 L230,45 L235,45 L235,15 Z M255,15 L250,15 L250,45 L255,45 L255,15 Z M275,15 L270,15 L270,45 L275,45 L275,15 Z"/>
-          </g>
-        </svg>
-      </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      {partners.map(partner => (
+        <div class="p-6 bg-white shadow-sm rounded-lg hover:shadow-md transition-all duration-300 hover:scale-105 text-center border-l border-gray-200 flex flex-col items-center">
+          <div class="mb-3" set:html={partner.icon} />
+          <h3 class="text-lg font-medium text-primary-600">{partner.name}</h3>
+        </div>
+      ))}
     </div>
   </div>
 </section>
