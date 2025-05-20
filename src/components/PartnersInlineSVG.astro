@@ -1,0 +1,60 @@
+---
+// Partners with custom icons for each company
+const partners = [
+  {
+    name: "ABB",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#FF000D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+          </svg>`
+  },
+  {
+    name: "Siemens",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#009999]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>`
+  },
+  {
+    name: "Schneider Electric",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#3DCD58]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>`
+  },
+  {
+    name: "Allen-Bradley",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#C8102E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>`
+  },
+  {
+    name: "Mettler Toledo",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#005DAA]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+          </svg>`
+  }
+];
+---
+
+<section class="py-16 bg-white relative">
+  <!-- 3D Animation Background -->
+  <div id="partners-animation" class="absolute inset-0 z-0 pointer-events-none opacity-30"></div>
+
+  <div class="container mx-auto px-4 lg:px-8 relative z-10">
+    <div class="text-center mb-12">
+      <span class="inline-block py-1 px-3 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-4">Technology Partners</span>
+      <h2 class="text-3xl font-heading font-bold text-secondary-900 mb-4">Our Global Partners</h2>
+      <p class="max-w-2xl mx-auto text-secondary-600">
+        We collaborate with leading global technology companies to ensure best-in-class solutions for our clients.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      {partners.map(partner => (
+        <div class="p-6 bg-white shadow-sm rounded-lg hover:shadow-md transition-all duration-300 hover:scale-105 text-center border-l border-gray-200 flex flex-col items-center">
+          <div class="mb-3" set:html={partner.icon} />
+          <h3 class="text-lg font-medium text-primary-600">{partner.name}</h3>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

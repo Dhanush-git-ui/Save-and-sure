@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const projects = [
+  {
+    title: "Cement Plant Automation",
+    location: "Maharashtra",
+    client: "Nagarjuna Cement",
+    image: "/images/projects/cement-plant.jpg",
+    description: "Upgraded electrical control system with new PLC-based MCC panels and automated conveyor controls.",
+    challenge: "Aging control system causing frequent downtime and inefficient operations.",
+    solution: "Implemented modern PLC-based control system with real-time monitoring capabilities.",
+    results: [
+      "30% higher production uptime",
+      "Real-time monitoring and control",
+      "Improved safety standards",
+      "Reduced maintenance costs"
+    ],
+    technologies: [
+      "Siemens S7-1500 PLC",
+      "WinCC SCADA",
+      "Profinet networking",
+      "Smart sensors"
+    ]
+  },
+  {
+    title: "Pharma Packaging Line",
+    location: "Hyderabad",
+    client: "Leading Pharmaceutical Manufacturer",
+    image: "/images/projects/pharma-packaging.jpg",
+    description: "Integrated conveyor and weighing system for pharmaceutical packaging automation.",
+    challenge: "Manual packaging operations leading to inconsistencies and material waste.",
+    solution: "Automated packaging line with precision weighing and quality control.",
+    results: [
+      "25% reduced material waste",
+      "Increased packaging speed",
+      "Enhanced quality control",
+      "GMP compliance achieved"
+    ],
+    technologies: [
+      "Allen-Bradley ControlLogix",
+      "Mettler Toledo scales",
+      "Vision inspection system",
+      "Automated conveyor controls"
+    ]
+  },
+  {
+    title: "Metro Rail Equipment Manufacturing",
+    location: "Chennai",
+    client: "Metro Rail Corporation",
+    image: "/images/projects/metro-rail.jpg",
+    description: "Power distribution and SCADA control system for metro rail component manufacturing.",
+    challenge: "Complex power requirements and need for precise manufacturing control.",
+    solution: "Implemented comprehensive power management and automation system.",
+    results: [
+      "20% reduced downtime",
+      "Improved equipment availability",
+      "Enhanced quality control",
+      "Predictive maintenance capability"
+    ],
+    technologies: [
+      "ABB power distribution",
+      "Schneider Electric PLC",
+      "SCADA monitoring",
+      "IoT sensors"
+    ]
+  }
+];
+---
+
+<Layout title="Projects" description="Explore our successful automation and control system implementations across various industries.">
+  <div>
+    <PageHeader
+      title="Our Projects"
+      description="Discover how our solutions have transformed operations across industries."
+    />
+
+    <!-- Projects List -->
+    <div class="py-16">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="space-y-16">
+          {projects.map((project, index) => (
+            <div class="bg-white rounded-lg shadow-md overflow-hidden service-card">
+              <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="relative h-64 lg:h-full">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    class="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="p-8">
+                  <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-2xl font-heading font-semibold text-secondary-900">{project.title}</h2>
+                    <span class="bg-primary-100 text-primary-800 text-sm font-medium px-3 py-1 rounded-full">
+                      {project.location}
+                    </span>
+                  </div>
+
+                  <p class="text-secondary-600 mb-6">{project.description}</p>
+
+                  <div class="space-y-6">
+                    <div>
+                      <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-2">Challenge</h3>
+                      <p class="text-secondary-600">{project.challenge}</p>
+                    </div>
+
+                    <div>
+                      <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-2">Solution</h3>
+                      <p class="text-secondary-600">{project.solution}</p>
+                    </div>
+
+                    <div>
+                      <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-2">Key Results</h3>
+                      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {project.results.map(result => (
+                          <li class="flex items-center text-secondary-600">
+                            <span class="w-2 h-2 bg-accent-500 rounded-full mr-3"></span>
+                            {result}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 class="text-lg font-heading font-semibold text-secondary-900 mb-2">Technologies Used</h3>
+                      <div class="flex flex-wrap gap-2">
+                        {project.technologies.map(tech => (
+                          <span class="bg-secondary-100 text-secondary-700 text-sm px-3 py-1 rounded-full">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

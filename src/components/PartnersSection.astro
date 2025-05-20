@@ -1,0 +1,32 @@
+---
+const partners = [
+  { name: "Siemens", logo: "/images/logos/siemens.png" },
+  { name: "Schneider Electric", logo: "/images/logos/schneider-electric.png" },
+  { name: "ABB", logo: "/images/logos/abb.png" },
+  { name: "Allen-Bradley", logo: "/images/logos/allen-bradley.png" },
+  { name: "Mettler Toledo", logo: "/images/logos/mettler-toledo.png" }
+];
+---
+
+<section class="py-16 bg-white relative">
+  <!-- 3D Animation Background -->
+  <div id="partners-animation" class="absolute inset-0 z-0 pointer-events-none opacity-30"></div>
+
+  <div class="container mx-auto px-4 lg:px-8 relative z-10">
+    <div class="text-center mb-12">
+      <span class="inline-block py-1 px-3 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-4">Technology Partners</span>
+      <h2 class="text-3xl font-heading font-bold text-secondary-900 mb-4">Our Global Partners</h2>
+      <p class="max-w-2xl mx-auto text-secondary-600">
+        We collaborate with leading global technology companies to ensure best-in-class solutions for our clients.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
+      {partners.map(partner => (
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110">
+          <img src={partner.logo} alt={partner.name} class="h-12 md:h-16" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
